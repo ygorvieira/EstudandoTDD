@@ -19,5 +19,18 @@ namespace Capitulo2
             Assert.AreEqual("Jogo de Pratos", algoritmo.Menor.Nome);
             Assert.AreEqual("Geladeira", algoritmo.Maior.Nome);
         }
+
+        [Test]
+        public void ApenasUmProduto()
+        {
+            CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
+            carrinho.Adiciona(new Produto("Geladeira", 450.0));
+
+            MaiorEMenor algoritmo = new MaiorEMenor();
+            algoritmo.Encontra(carrinho);
+
+            Assert.AreEqual("Geladeira", algoritmo.Maior.Nome);
+            Assert.AreEqual("Geladeira", algoritmo.Menor.Nome);
+        }
     }
 }
