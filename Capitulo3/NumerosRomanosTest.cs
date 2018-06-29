@@ -44,5 +44,13 @@ namespace Capitulo3
             int numero = romano.Converte("IX");
             Assert.AreEqual(9, numero);
         }
+
+        [Test]
+        public void DeveEntenderCombinacoesComplexasComoXXIV()
+        {
+            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
+            int numero = romano.Converte("XXIV");
+            Assert.AreEqual(24, numero);
+        }
     }
 }
